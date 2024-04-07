@@ -1,0 +1,1000 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Poppins:wght@400;700;700italic;800italic&display=swap');
+@import url(https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;0,800;1,700;1,800&display=swap);
+
+
+/* CSSリセット */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5ディスプレイロールリセット */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+/* スムーススクロールの設定 */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+    line-height: 1;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* 一般的なスタイル定義 */
+body {
+    font-size: 16px;
+    color: #333;
+    background-color: #fff;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+h2 {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+section {
+  max-width: 1200px;
+  margin: 70px auto 0;
+}
+
+
+.main-img {
+  height: 651px;
+  background-image: url("../image/main_img01.jpg");
+  background-size: cover; /* 背景画像を要素のサイズに合わせて調整 */
+  background-position: center; /* 背景画像を中央に配置 */
+}
+
+
+/* headerの設定 */
+header {
+  width: 100%;
+  background-color: white;
+  position: sticky;
+  top: 0; /* 要素がビューポートの上端に到達したときに固定 */
+  z-index: 1000; /* 他の要素より上に表示されるようにz-indexを高く設定 */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);;
+}
+
+.header__contents {
+  max-width: 1200px;
+  height: 80px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+
+.header__logo {
+  margin-left: 20px;
+}
+
+.header__nav {
+  padding: 18px 0;
+  margin-right: 50px;
+}
+
+.header__nav__button {
+  display: flex;
+}
+
+.nav__list {
+  display: flex;
+  text-align: center;
+}
+
+.nav__link {
+  font-size: 20px;
+}
+
+.nav__link:hover {
+  text-decoration: none;
+}
+
+.header__apply-button {
+  display: inline-block; /* ボタンとしてのスタイル */
+  padding: 18px 41px; /* ボタンの内部の余白 */
+  margin-right: 20px;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  background-image: linear-gradient(to right, #0271E0, #53A2F0); /* ボタンの背景にグラデーションを設定 */
+  border: none; /* 枠線なし */
+  border-radius: 35px; /* 角を丸くするのに適切な値（25%から25pxへ変更） */
+  cursor: pointer; /* ホバー時にカーソルをポインターに */
+  transition: opacity 0.3s ease; /* 透明度の変化にアニメーションを設定 */
+}
+
+.header__apply-button:hover {
+  text-decoration: none;
+}
+
+.nav__list .nav__item:nth-child(2) .nav__link {
+  margin: 0 48px;
+}
+
+
+/* ハンバーガーメニューの非表示設定 */
+.hamburger-menu {
+  display: none;
+}
+
+
+.header_sidebar {
+  display: none;
+}
+
+/* サイドバーがアクティブな状態 */
+.header_sidebar.active {
+  right: 0; /* アクティブ時に画面内にスライドイン */
+}
+
+
+/* セクションの上マージンの設定 */
+
+.section {
+  max-width: 1200px;
+  margin:78px auto 0;
+}
+
+/* sp画像非表示設定 */
+.sp__main-img {
+  display: none;
+}
+
+/* トップ画像下のボタンの設定 */
+.action-list {
+  position: relative;
+  bottom: 36px;
+  display: flex;
+  justify-content: space-around;
+  padding: 0 76px;
+}
+
+.action-list__button {
+  width: 340px;
+  display: inline-block; /* ボタンとしてのスタイル */
+  padding: 25px 0; /* ボタンの内部の余白 */
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  border: none; /* 枠線なし */
+  border-radius: 35px; /* 角を丸くするのに適切な値（25%から25pxへ変更） */
+  cursor: pointer; /* ホバー時にカーソルをポインターに */
+  transition: opacity 0.3s ease; /* 透明度の変化にアニメーションを設定 */
+}
+
+.action-list__button:hover {
+  opacity: 0.3;
+}
+
+.button__contact {
+  background-color: #77CB33;
+
+}
+
+.button__entry {
+  background-color: #F6AA00;
+}
+
+.button__request {
+  background-color: #3AC8AD;
+}
+
+/********************* 選ばれる3つの理由セクションの設定 */
+
+.section__title {
+  text-align: center;
+  margin-bottom: 44px;
+}
+
+/* 3だけ文字色を変える設定 */
+h2 span {
+  font-family: 'Poppins', sans-serif;
+  font-size: 54px;
+  color: #F11F8D;
+}
+
+.reasons {
+  margin-top: 48px;
+}
+
+.reason {
+  display: flex;
+}
+
+.reasons_sp_img {
+  display: none;
+}
+
+.reason__sub-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 8px;
+  margin-bottom: 13px;
+  line-height: 42px;
+}
+
+.reason--reverse {
+  flex-direction: row-reverse;
+  margin: 48px 0 46px;
+}
+
+.reason__point-number  {
+  font-family: 'Poppins', sans-serif;
+  font-size: 28px;
+  font-style: italic;
+  font-weight: bold;
+  color: #F11F8D;
+}
+
+.reason__point-number span {
+  font-size: 42px;
+}
+
+.reason__img, .reason__content {
+  width: 50%;
+  padding: 0 20px;
+}
+
+.reason__content {
+  padding: 6px 20px;
+}
+
+.reason__content p {
+  line-height: 28px;
+}
+
+
+/* 入学説明会お申込みセクションの設定 ******************************/
+.apply-section {
+  width: 100%;
+  margin-top: 72px;
+  padding: 58px 0 58px; /* 上下の空間を確保しつつ、左右は0に設定 */
+  background-color: #FFEDED;
+  text-align: center; /* テキストを中央揃えに */
+}
+
+.apply-section__button {
+  display: inline-block; /* ボタンとしてのスタイル */
+  margin: 24px auto 0; /* 上下に空間を追加し、左右マージンをautoにして中央揃えに */
+  padding: 26px 49px 26px 71px; /* ボタンの内部の余白 */
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  background-image: linear-gradient(to right, #0091EA, #00CFFD); /* ボタンの背景にグラデーションを設定 */
+  border: none; /* 枠線なし */
+  border-radius: 35px; /* 角を丸くするのに適切な値（25%から25pxへ変更） */
+  cursor: pointer; /* ホバー時にカーソルをポインターに */
+  transition: opacity 0.3s ease; /* 透明度の変化にアニメーションを設定 */
+}
+
+.apply-section__button:hover {
+  opacity: 0.5; /* ホバー時に透明度を下げる */
+  text-decoration: none;
+}
+
+
+/* courseセクションの設定 *********************************************/
+
+.tab-sp-img {
+  display: none;
+}
+
+.area {
+  margin-top: 80px;
+}
+
+.course__content {
+  max-width: 1200px;
+  margin: -24px auto 0;
+  flex-wrap: wrap;
+  display: flex;
+}
+
+.tab_class {
+  max-width: 1100px;
+  width: 47%;
+  margin: 16px 20px 0;
+  padding: 28px 0;
+  background-color: #F0F0F0;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  display: block;
+  float: left;
+  order: -1;
+  color: rgba(0, 0, 0, 0.5); /* ここでは黒色の文字を50%の透明度に設定しています */
+  border-radius: 10px 10px 0 0;
+}
+
+.tab_class-right {
+  margin-left: auto;
+}
+
+input[name="tab_name"] {
+  display: none;
+}
+
+input:checked + .tab_class {
+  background-color: #F2F9FF;
+  color: black;
+}
+
+.content_class {
+  display: none;
+  width: 100%;
+}
+
+input:checked + .tab_class + .content_class {
+  display: block;
+}
+
+
+.content__tab {
+  max-width: 1100px;
+  padding: 28px 30px;
+  margin: 0 auto -3px;
+  background-color: #F2F9FF;
+  border-radius: 0 0 10px 10px;
+}
+
+.tab__content {
+  max-width: 1160px;
+  display: flex;
+  align-items: center;
+}
+
+.tab__content-up {
+  margin-bottom: 32px;
+}
+
+.tab__wrap {
+  width: 50%;
+}
+
+.tab__wrap img, .tab__wrap-left img {
+  transition: transform 0.3s ease; /* アニメーション効果 */
+  transform-origin: center; /* 拡大の基点を中心に */
+}
+
+.tab__wrap:hover img, .tab__wrap-left:hover img {
+  transform: scale(1.2); /* マウスオーバー時に1.2倍に拡大 */
+}
+
+.tab__wrap-left {
+  margin-right: 31px;
+}
+
+.tab-img {  /*タブの中の画像を大きくする設定 */
+  width: 100%;
+}
+
+.tab__wrap img {
+  margin-bottom: 16px;
+}
+
+.tab__wrap-content {
+  display: flex;
+  margin-top: 2px;
+}
+
+.tab__wrap-content p {
+  margin-left: 12px;
+  margin-bottom: 13px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+
+/* 料金セクションの設定*************************/
+
+.section__title-bottom {
+  margin-bottom: 38px;
+}
+
+.price-table {
+  max-width: 600px;
+  border: 3px solid #ddd;
+  border-collapse: collapse;
+  margin: 20px auto;
+}
+
+.price-table__head {
+  background-color: #f2f2f2;
+}
+
+.price-table__header-cell {
+  padding: 12px 15px;
+  border: 1px solid #ddd; /* セルの枠線の色を設定 */
+  color: #333; /* テキストの色 */
+  font-size: 18px;
+}
+
+.price-table__cell, .price-table__cell--price {
+  text-align: center;
+  border: 1px solid #ddd;
+  color: #333;
+  font-size: 14px;
+}
+
+.price-table__cell {
+  width: 141px;
+  padding: 25px 0;
+  font-size: 18px;
+}
+
+
+.price-table__cell--price {
+  width: 452px;
+  padding: 24px 0 18px;
+  font-size: 32px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  color: #F23397;
+}
+
+.price-table__cell--price span {
+  font-size: 18px;
+}
+
+.price-table__header-cell--lessons {
+  padding: 30px 34px 26px 35px;/* ここに年間講数のためのパディングを設定 */;
+}
+
+
+/* footerの設定 ****************************************/
+
+.footer-sp-section_img {
+  display: none;/* スマホ専用footer画像の非表示設定 */
+}
+
+.footer-sp-section {
+  display: none;
+}
+
+.footer-section_img {
+  display: flex;
+  width: 100%;
+  height: auto;
+}
+
+.footer-section_img a {
+  width: 50%;
+}
+
+.footer-section_img a img {
+  transition: opacity 0.3s ease;
+}
+
+.footer-section_img a:hover img {
+  opacity: 0.7; /* ホバー時の透明度 */
+}
+
+
+.copyright {
+  font-size: 14px;
+  text-align: center;
+  background-color: #DDD;
+  padding: 50px 0 51px;
+}
+
+.footer__wrap {
+  display: flex;
+  overflow: hidden;
+}
+
+.footer__right, .footer__left {
+  display: flex;
+  width: 50%;
+  height: 320px;
+  background-size: cover; /* 背景画像を要素のサイズに合わせて調整 */
+  background-position: center; /* 背景画像を中央に配置 */
+}
+
+.footer__left:hover, .footer__right:hover {
+  transform: scale(1.2); /* マウスオーバー時に1.2倍に拡大 */
+}
+
+.footer__left p, .footer__right p {
+  font-size: 32px;
+  font-weight: bold;
+  color: white;
+  margin: auto;
+}
+
+.footer__left:hover, .footer__right:hover {
+  opacity: 0.6; /* 透明度を下げる */
+  transition: opacity 0.3s ease-in-out; /* 透明度の変化にアニメーションを適用 */
+}
+
+
+.footer__left {
+  background-image: url("../image/footer_left.jpg");
+}
+
+.footer__right {
+  background-image: url("../image/footer_right.jpg");
+}
+
+.footer__left:hover,
+.footer__right:hover {
+  text-decoration: none; /* ホバー時の下線を消す */
+}
+
+
+@media (max-width: 1086px) {
+
+.header__contents {
+  padding: 10px;
+}
+
+.header__logo {
+  width: 30%;
+  margin-left: 0;
+}
+
+.header__logo img {
+  width: 80%;
+}
+
+.header__nav {
+  margin-right: 0;
+}
+
+.nav__link {
+  font-size: 16px;
+}
+
+.nav__item {
+  margin-right: 10px;
+}
+
+.nav__list .nav__item .nav__link {
+  font-size: 14px; /* フォントサイズを小さく */
+  margin: 0; /* ナビゲーションアイテムのマージンを調整 */
+}
+
+.header__apply-button {
+  padding: 12px 20px; /* ボタンのパディングを調整 */
+  margin-right: 10px;
+  font-size: 16px; /* ボタンのフォントサイズを小さく */
+}
+
+.nav__item:nth-child(2) .nav__link {
+  margin: 0 20px; /* 中央のナビゲーションアイテムのマージンをさらに調整 */
+}
+
+.nav__list .nav__item:nth-child(2) .nav__link {
+  margin: 0;
+}
+
+
+.action-list {
+  padding: 0;
+}
+
+.action-list__button {
+  width: 260px;
+  font-size: 22px;
+}
+
+}
+
+
+
+
+
+/* 横幅768px未満のデバイス向けのスタイル *************************/
+@media (max-width: 767px) {
+
+/* 全体の設定 ************************************/
+.section {
+  padding: 0 16px;
+  margin:69px auto 0;
+}
+
+.section__title h2 {
+  font-size: 28px;
+}
+
+
+.section__title {
+  margin-bottom: 26px;
+}
+
+.section__title span {
+  font-size: 40px;
+}
+
+
+/* headerの設定 ***********************************************/
+
+
+
+
+/* headerのメニューと申込ボタンの非表示設定 */
+.main-img,
+.header__nav,
+.header__apply-button {
+  display: none;
+}
+
+.header__contents {
+  height: 70px;
+  padding: 0;
+  margin: 0;
+}
+
+.header__logo {
+  width: 45%;
+}
+
+.header__logo img {
+  max-width: 100%;
+  width: 100%;
+  margin-left: 15px;
+  margin-top: 6px;
+}
+
+.sp__main-img {
+  display: block;
+}
+
+.sp__main-img img {
+  width: 100%;
+}
+
+.hamburger-menu {
+  display: flex;
+  float: right;
+}
+
+
+/* トップ画面下のボタン3つを縦に並べる設定 */
+
+.action-list {
+  flex-direction: column; /* 子要素を縦に並べる */
+  align-items: center; /* 縦軸（クロス軸）で中央揃えにする */
+  justify-content: center; /* 横軸（メイン軸）で中央揃えにする */
+  bottom: -22px;
+}
+
+.action-list__button {
+  width: 250px;
+  font-size: 16px;
+  padding: 16px 0;
+}
+
+.button__entry {
+  margin: 12px 0;
+}
+
+
+/* 選ばれる3つの理由セクションの設定 ************************************************/
+
+.reason {
+  display: block;
+  margin-bottom: 32px;
+}
+
+.reason__img {
+  padding: 0;
+  height: 100%;
+}
+
+.reasons_img {
+  display: none;
+}
+
+.reasons_sp_img {
+  display: block;
+}
+
+.reasons {
+  margin-top: 54px;
+}
+
+.reason--reverse {
+  margin-top: 0;
+  margin-bottom: 26px;
+}
+
+.reason__bottom {
+  margin-top: 33px;
+}
+
+.reason__content {
+  display: block;
+  width: 100%;
+  padding: 0;
+}
+
+.reason__content p {
+  margin-top: -3px;
+}
+
+.reason__img {
+  width: 100%;
+  align-items: center;
+}
+
+.reason__point-number {
+  font-size: 24px;
+  margin-top: 15px;
+}
+
+.reason__point-number span {
+  font-size: 36px;
+}
+
+.reason__sub-title {
+  font-size: 20px;
+  font-family: 'Noto Sans JP', sans-serif;
+  line-height: 29px;
+}
+
+
+
+/* 入学説明会の申し込みセクション */
+
+.apply-section {
+  margin-top: 35px;
+  padding: 36px 0 40px;
+}
+
+.apply__content {
+  margin: 0 36px;
+}
+
+.apply-section__button {
+  margin: 0;
+  padding: 24px 50px;
+  font-size: 20px;
+}
+
+.apply-section__description {
+  line-height: 30px;
+  margin-bottom: 9px;
+}
+
+.apply-section-center {
+  margin-top: 67px;
+}
+
+.apply-section-bottom {
+  margin-top: 63px;
+}
+
+
+/* courseの設定 *********************************/
+
+.course__title {
+  margin-left: 14px;
+}
+
+.tab-img {
+  display: none;
+}
+
+.tab-sp-img {
+  display: block;
+}
+
+.area {
+  padding: 0;
+  margin-top: 70px;
+}
+
+.tab_class {
+  font-size: 18px;
+  margin: 20px 5px 0;
+}
+
+.tab__content {
+  display: block;
+}
+
+.tab__wrap {
+  width: 100%;
+}
+
+.tab__wrap-content p {
+  margin-left: 5px;
+}
+
+.tab__wrap-right {
+  margin-top: 18px;
+}
+
+.tab__content-up {
+  margin-bottom: 22px;
+}
+
+.content__tab {
+  padding: 26px 16px 48px;
+}
+
+/*料金セクションの設定  ***********************************/
+.price-table__header-cell {
+  font-size: 16px;
+  padding: 24px 0;
+}
+
+.price-table__header-cell--price {
+  padding-right: 14px;
+}
+
+.price-table__cell {
+  font-size: 16px;
+  padding: 20px 0;
+}
+
+.price-table__cell--price {
+  width: 246px;
+  font-size: 28px;
+  padding: 18px 5px 17px 0;
+}
+
+.price-table__cell--price span {
+  font-size: 16px;
+}
+
+/* サイドバーの設定 */
+.header_sidebar {
+  display: block;
+  position: fixed;
+  top: 70px;
+  right: -100vw; /* 画面の幅と同じ値に設定して完全に画面外に隠す */
+  width: 100vw; /* ビューポートの幅に合わせる */
+  height: 390px;
+  background-color: #005BAC;
+  transition: right 0.3s ease; /* スムーズなスライドインアニメーション */
+  z-index: 99;
+}
+
+
+.header_sidebar ul li {
+  padding: 24px 0px;
+  margin: 0 20px;
+  font-weight: bold;
+  font-size: 18px;
+  border-bottom: 1px solid white; /* 下線を描画 */
+}
+
+.header_sidebar ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.white_arrow {
+  margin-right: 16px;
+}
+
+.sidebar-button {
+  display: block;
+  margin: 32px auto;
+  padding: 24px 88px;
+  background-image: linear-gradient(to right, white, white);
+  color: #005BAC;
+  font-size: 18px;
+  text-align: center; /* ボタン内のテキストも中央揃え（必要に応じて） */
+  width: fit-content; /* ボタンの幅を内容に基づいて自動調整 */
+}
+
+/* footerの設定 ****************************************/
+
+.footer__wrap {
+  display: none;
+}
+
+.footer-sp-section {
+  display: block;
+}
+
+.footer-sp-section_img {
+  display: block;
+  font-size: 0;
+}
+
+
+.footer-sp-section_up, .footer-sp-section_down {
+  display: flex;
+  align-items: center; /* 垂直方向の中央揃え */
+  width: 100vw;
+  height: 170px;
+  background-size: cover;
+  background-position: center;
+}
+
+.footer-sp-section_up {
+  background-image: url("../image/footer_sp_img_01.jpg");
+}
+
+.footer-sp-section_down {
+  background-image: url("../image/footer_sp_img_02.jpg");
+}
+
+.footer-sp-section_up p, .footer-sp-section_down p {
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  color: white;
+  /* padding: auto 20px; を削除または修正 */
+  margin: 0; /* p要素のデフォルトのマージンを解除 */
+  padding-left: 16px;
+}
+
+.copyright {
+  font-size: 13px;
+  padding: 35px 0 51px;
+}
+
+
+}
